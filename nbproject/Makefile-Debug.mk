@@ -52,7 +52,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../../spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.3.0/trilinos-master-cuwfubxtt2ngh5yb6pxqjb2pdaokophd/lib
+LDLIBSOPTIONS=-L../../spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.3.0/trilinos-master-cuwfubxtt2ngh5yb6pxqjb2pdaokophd/lib -L../../spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.3.0/openmpi-3.1.3-tfegwcywpztpm57cl44hxf64kbckdjmu/lib -L../../spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.3.0/yaml-cpp-0.6.2-cuarfgtpropry6cxz25nzh4fudyk2lja/lib -lyaml-cpp -lmpi
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -65,7 +65,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/readstlmesh: ${OBJECTFILES}
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.3.0/trilinos-master-cuwfubxtt2ngh5yb6pxqjb2pdaokophd/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../../spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.3.0/trilinos-master-cuwfubxtt2ngh5yb6pxqjb2pdaokophd/include -I../../spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.3.0/openmpi-3.1.3-tfegwcywpztpm57cl44hxf64kbckdjmu/include -I../../spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.3.0/yaml-cpp-0.6.2-cuarfgtpropry6cxz25nzh4fudyk2lja/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
